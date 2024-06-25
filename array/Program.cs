@@ -1,9 +1,12 @@
 ﻿Console.WriteLine("Hello, World!");
 // Declare fixed size array 
-int[] grades = new int[5];
+
 int number = 0;
+int numberOfGrade = Convert.ToInt32(Console.ReadLine());
 // 5 space adresses / indexes - 0, 1, 2, 3, 4
 // if n is  the size of the array, then your array has adresses between 0 to n-1
+int[] grades = new int[numberOfGrade];
+string[] students = new string[numberOfGrade];
 
 // add values to fixed size array
 grades[0] = 45;
@@ -12,15 +15,20 @@ grades[2] = 34;
 grades[3] = 21;
 grades[4] = 13;
 
-for (int i = 0; i < grades.Length; i++)
+for (int i = 0; i < numberOfGrade; i++)
 {
+    Console.WriteLine("Enter student's name");
+    students[i] = Console.ReadLine();
+
     Console.WriteLine("Enter grade");
     grades[i] = Convert.ToInt32(Console.ReadLine());
 }
 // print value in Fixed size array
 Console.WriteLine("The Grade you have entered are: ");
-for (int i = 0;i < grades.Length; i++)
+for (int i = 0;i < numberOfGrade; i++)
 {
+    Console.WriteLine($"{students[i]} : {grades[i]}");
+    Console.WriteLine(students[i]);
     Console.WriteLine(grades[i]);
 }
 
